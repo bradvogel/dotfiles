@@ -31,13 +31,24 @@ alias tmp="cd /tmp"
 alias gp="git push"
 alias gpf="git push -f"
 alias gitsquash='git fetch origin;git rebase -i HEAD~$(git rev-list --count HEAD ^origin/main)'
+alias gitresetmain="git reset --hard origin/main; git checkout main; gu"
 claude() {
     command claude --dangerously-skip-permissions "$@"
 }
 
-# Useful for notifying me via audio when a long running command is done, eg: npm test; notifyme
-alias notifyme="say 'command finished'"
-alertme() {
+# Useful for notifying me via audio and visual alert when a long running command is done, eg: npm test; notifyme
+notifyme() {
     message=${1:-"command finished"}
+    say "$message"
     osascript -e "display alert \"$message\"" >/dev/null 2>&1 &
+}
+
+settimer() {
+    sleep $(echo "$1 * 60" | bc)
+    if [ -z "$2" ]
+    then
+      say "timer finished"
+    else
+      say "$2"
+    fi
 }

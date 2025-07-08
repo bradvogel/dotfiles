@@ -32,9 +32,7 @@ alias gp="git push"
 alias gpf="git push -f"
 alias gitsquash='git fetch origin;git rebase -i HEAD~$(git rev-list --count HEAD ^origin/main)'
 alias gitresetmain="git reset --hard origin/main; git checkout main; gu"
-claude() {
-    command claude --dangerously-skip-permissions "$@"
-}
+alias claude='~/.claude/local/claude --dangerously-skip-permissions'
 
 # Useful for notifying me via audio and visual alert when a long running command is done, eg: npm test; notifyme
 notifyme() {

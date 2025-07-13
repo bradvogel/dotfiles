@@ -34,6 +34,9 @@ alias gitsquash='git fetch origin;git rebase -i HEAD~$(git rev-list --count HEAD
 alias gitresetmain="git reset --hard origin/main; git checkout main; gu"
 alias claude='~/.claude/local/claude --dangerously-skip-permissions'
 
+# Git configuration
+git config --global push.autoSetupRemote true
+
 # Useful for notifying me via audio and visual alert when a long running command is done, eg: npm test; notifyme
 notifyme() {
     message=${1:-"command finished"}

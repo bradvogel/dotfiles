@@ -30,6 +30,7 @@ alias dev="cd ~/dev"
 alias tmp="cd /tmp"
 alias gp="git push"
 alias gpf="git push -f"
+alias gu="git fetch --all --prune && git pull --ff-only"
 alias gitsquash='git fetch origin;git rebase -i HEAD~$(git rev-list --count HEAD ^origin/main)'
 alias gitresetmain="git reset --hard origin/main; git checkout main; gu"
 alias claude='~/.claude/local/claude --dangerously-skip-permissions'

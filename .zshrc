@@ -28,12 +28,17 @@ PROMPT='%F{cyan}%~%f${vcs_info_msg_0_} $ '
 # Change dir
 alias dev="cd ~/dev"
 alias tmp="cd /tmp"
+
+# Git aliases
 alias gp="git push"
 alias gpf="git push -f"
 alias gu="git fetch --all --prune && git pull --ff-only"
 alias gitsquash='git fetch origin;git rebase -i HEAD~$(git rev-list --count HEAD ^origin/main)'
 alias gitresetmain="git reset --hard origin/main; git checkout main; gu"
+
+# Claude Code
 alias claude='~/.claude/local/claude --dangerously-skip-permissions'
+alias cc='claude'
 
 # Git configuration
 git config --global push.autoSetupRemote true
